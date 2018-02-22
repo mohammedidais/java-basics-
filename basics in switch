@@ -1,0 +1,144 @@
+
+package javaapplication3;
+import java.util.;
+
+public class JavaApplication3 {
+static int max;
+  static int min;
+   public static void max_min (int my_array[]) {
+       max = my_array[0];
+        min = my_array[0];
+        int len = my_array.length;
+        for (int i = 1; i  len - 1; i = i + 2)
+             {
+            if (i + 1  len) {
+                if (my_array[i]  max) max = my_array[i];
+                if (my_array[i]  min) min = my_array[i];
+            }if (my_array[i]  my_array[i + 1]) {
+                if (my_array[i]  max) max = my_array[i];
+                if (my_array[i + 1]  min) min = my_array[i + 1];
+            }
+            if (my_array[i]  my_array[i + 1]) {
+                if (my_array[i]  min) min = my_array[i];
+                if (my_array[i + 1]  max) max = my_array[i + 1];
+            }
+        }
+    
+
+   }
+   
+    public static void main(String[] args) {
+        Scanner in = new Scanner (System.in);
+      while (true)
+      {
+          System.out.println(1) Write a program in Java to input 5 numbers from keyboard and find their sum and average);
+          System.out.println(2) Write Java Program that reads three number and prints the smallest of them.);
+          System.out.println(3) Write a Java program to convert minutes into a number of years and days Input the number of minutes);
+          System.out.println(4) Write a Java program to solve quadratic equations (use if, else if and else).);
+          System.out.println(5) Write a Java program to find the maximum and minimum value of an array);
+          System.out.println(6) Write a Java program to reverse an array of integer values);
+          System.out.println(7) END );
+          int a = in.nextInt();
+          switch (a)
+          {
+              case 1  {
+                  
+ System.out.println(enter 5 numbers );
+ int x ,y, z ,w,s;
+ int sum , avg ;
+ x = in.nextInt();
+ y = in.nextInt();
+ z = in.nextInt();
+ w = in.nextInt();
+ s = in.nextInt();
+ sum = x+y+z+w+s;
+ avg = sum  5 ;
+ System.out.println(the sum is  +sum);
+ System.out.println(the average is  +avg);
+              }
+                  break;
+              case 2 
+              {
+                  int x1 , y1 ,z1 ;
+ System.out.println(enter three numbers );
+ x1 = in.nextInt();
+ y1 = in.nextInt();
+ z1 = in.nextInt();
+ int min1 ;
+ min1 = Math.min(x1, y1);
+ min1 = Math.min(min1 , z1 );
+ System.out.println(the smallest numbers is +min1);
+              }
+                  break ; 
+              case 3 {
+                   double minutesInYear = 60  24  365;
+
+        Scanner input = new Scanner(System.in);
+
+        System.out.print(Input the number of minutes );
+
+        double min = input.nextDouble();
+
+        long years = (long) (min  minutesInYear);
+        int days = (int) (min  60  24) % 365;
+
+        System.out.println((int) min +  minutes is approximately  + years +  years and  + days +  days);
+    
+              }
+                  break;
+              case 4  {
+                  System.out.print(Input a );
+            double a1 = in.nextDouble();
+            System.out.print(Input b );
+            double b = in.nextDouble();
+            System.out.print(Input c );
+            double c = in.nextDouble();
+
+            double result = b  b - 4.0  a1  c;
+
+            if (result  0.0) {
+                double r1 = (-b + Math.pow(result, 0.5))  (2.0  a1);
+                double r2 = (-b - Math.pow(result, 0.5))  (2.0  a1);
+                 System.out.println(The roots are  + r1 +  and  + r2);
+            } else if (result == 0.0) {
+                double r1 = -b  (2.0  a1);
+                System.out.println(The root is  + r1);
+            } else {
+                System.out.println(The equation has no real roots.);
+            }
+
+              }
+                  break ;
+                  case 5  {int[] my_array = {5, 88, 75, 65, 36, 56, 57, 13, 29, 79};
+        max_min(my_array);
+        System.out.println( Original Array +Arrays.toString(my_array));
+        System.out.println( Maximum value for the above array =  + max);
+        System.out.println( Minimum value for the above array =  + min);
+                      
+                  }
+                  break ;
+                  case 6  {int[] array1 = { 1,2,3,4,5,6,7,8,9,10};
+                      System.out.println(Original array  +Arrays.toString(array1));  
+   for(int i = 0; i  array1.length  2; i++)
+  {
+    int temp = array1[i];
+    array1[i] = array1[array1.length - i - 1];
+    array1[array1.length - i - 1] = temp;
+    System.out.println(Reverse array  +Arrays.toString(array1));
+  }
+                  }
+                      break ;
+                  case 7  System.out.println(end menu !!);
+                 break ; 
+                 
+                  
+                  
+                     
+                   
+          }
+      }
+        
+        
+    }
+    
+}
